@@ -22,8 +22,8 @@ enemyImg = pygame.image.load(f'assets/enemy/{enemy}')
 print(f"{player_name} vs. {enemy_name}")
 
 
-def draw_player(playerrX: int = 370, playerrY: int = 480):
-    screen.blit(playerImg, (playerrX, playerrY))
+def draw_player(playerX: int = 370, playerY: int = 480):
+    screen.blit(playerImg, (playerX, playerY))
 
 
 running = True
