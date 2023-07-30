@@ -3,7 +3,7 @@ import random
 import os
 
 pygame.init()
-screen = pygame.display.set_mode((640, 480))
+screen = pygame.display.set_mode((800, 600))
 
 # title and icon
 pygame.display.set_caption('Space Invaders')
@@ -16,10 +16,15 @@ player_name = player.replace('_', ' ').replace('.png', '')
 enemy_assets = [enemy for enemy in os.listdir('./assets/enemy/')]
 enemy = random.choice(enemy_assets)
 enemy_name = enemy.replace('_', ' ').replace('.png', '')
-
-player = pygame.image.load(f'assets/spaceships/{player}')
-enemy = pygame.image.load(f'assets/enemy/{enemy}')
+# change player image to 24x24
+playerImg = pygame.image.load(f'assets/spaceships/{player}')
+enemyImg = pygame.image.load(f'assets/enemy/{enemy}')
 print(f"{player_name} vs. {enemy_name}")
+
+
+def draw_player():
+    screen.blit(playerImg, (370, 480))
+
 
 running = True
 while running:
@@ -28,4 +33,5 @@ while running:
             running = False
 
     screen.fill((0, 0, 0))  # R,G,B
+    draw_player()
     pygame.display.update()
