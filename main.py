@@ -1,5 +1,5 @@
 import pygame
-
+pygame.init()
 screen = pygame.display.set_mode((640, 480))
 
 # title and icon
@@ -12,3 +12,6 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+
+    screen.fill((0, 0, 0))  # R,G,B
+    pygame.display.update()
